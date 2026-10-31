@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#14305c">
+<meta name="description" content="شناسنامه ماشین: ثبت سرویس‌ها، اسناد، بنزین و سررسیدهای ماشین شخصی در گوشی، بدون نیاز به اینترنت.">
+<title>شناسنامه ماشین</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314305c'/%3E%3Crect x='10' y='22' width='44' height='20' rx='4' fill='%23fff'/%3E%3Crect x='10' y='22' width='9' height='20' rx='4' fill='%231f6fd1'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --paper: #f6f8fb;
+    --ink: #14202e;
+    --muted: #46576b;
+    --line: #cfd8e3;
+    --brand: #14305c;
+    --link: #1b4f9c;
+    --note-bg: #eaf0f8;
+    --amber: #8a5a00;
+    --plate-blue: #1f6fd1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0f1620;
+      --ink: #e8eef6;
+      --muted: #a2b2c7;
+      --line: #2a3747;
+      --brand: #9ec0f5;
+      --link: #8db4f5;
+      --note-bg: #16212f;
+      --amber: #f0c26a;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Vazirmatn", "IRANSansX", "Segoe UI", Tahoma, system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.95;
+  }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  /* هیرو: پلاک، مشخص‌ترین چیز در دنیای این برنامه */
+  .hero { padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
+  .plate {
+    direction: ltr;
+    display: inline-flex;
+    align-items: stretch;
+    background: #fff;
+    color: #111;
+    border: 3px solid #111;
+    border-radius: 12px;
+    overflow: hidden;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+  }
+  .plate .strip {
+    background: var(--plate-blue);
+    color: #fff;
+    width: 2.1rem;
+    display: grid;
+    place-items: center;
+    font-size: .6rem;
+    letter-spacing: .02em;
+    line-height: 1.1;
+    text-align: center;
+  }
+  .plate .main { font-size: 1.9rem; padding: .35rem .9rem; display: flex; align-items: center; gap: .55rem; }
+  .plate .side {
+    border-inline-start: 2px solid #111;
+    padding: .2rem .7rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    line-height: 1.25;
+  }
+  .plate .side small { font-size: .7rem; font-weight: 700; }
+  .plate .side b { font-size: 1.35rem; }
+
+  h1 {
+    margin: 0 0 .5rem;
+    font-size: clamp(2.1rem, 7vw, 3.4rem);
+    line-height: 1.35;
+    font-weight: 800;
+    color: var(--brand);
+  }
+  .tagline { margin: 0 0 1rem; font-size: 1.2rem; max-width: 36rem; }
+  .meta { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  h2 {
+    margin: 2.5rem 0 .75rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 800;
+    color: var(--brand);
+  }
+  p { margin: 0 0 1rem; max-width: 38rem; }
+
+  /* امکانات: مثل ردیف‌های یک فرم شناسنامه */
+  dl.fields { margin: 0; border-top: 1px solid var(--line); }
+  dl.fields > div {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 1rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  dl.fields dt { font-weight: 800; }
+  dl.fields dd { margin: 0; color: var(--muted); }
+  @media (max-width: 34rem) {
+    dl.fields > div { grid-template-columns: 1fr; gap: .15rem; }
+  }
+
+  .note {
+    background: var(--note-bg);
+    border-inline-start: 4px solid var(--brand);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+  }
+  .note ul { margin: 0; padding-inline-start: 1.25rem; }
+  .note li { margin-bottom: .55rem; }
+  .note li:last-child { margin-bottom: 0; }
+
+  .status { color: var(--amber); font-weight: 700; }
+  a { color: var(--link); text-underline-offset: .2em; }
+  a:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; border-radius: 3px; }
+  .email { direction: ltr; unicode-bidi: embed; display: inline-block; font-weight: 700; }
+
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <header class="hero">
+    <div class="plate" aria-hidden="true">
+      <div class="strip">I.R.<br>IRAN</div>
+      <div class="main"><span>۱۲</span><span>ب</span><span>۳۴۵</span></div>
+      <div class="side"><small>ایران</small><b>۶۷</b></div>
+    </div>
+    <h1>شناسنامه ماشین</h1>
+    <p class="tagline">سرویس‌ها، اسناد، بنزین و سررسیدهای ماشین شما، همه در گوشی خودتان و بدون نیاز به اینترنت.</p>
+    <p class="meta">اپلیکیشن اندروید، نسخه ۶.۲، نیازمند اندروید ۷ یا بالاتر</p>
+  </header>
+
+  <section aria-labelledby="about">
+    <h2 id="about">برنامه برای چیست؟</h2>
+    <p>شناسنامه ماشین تاریخچه‌ی ماشین شخصی شما را نگه می‌دارد: هر سرویس، بیمه و معاینه فنی، هر بار بنزین‌زنی و هر سررسید، یک‌جا و با تاریخ شمسی. دیگر لازم نیست فاکتورها و تاریخ‌ها را در ذهن یا در پیام‌رسان‌ها دنبال کنید.</p>
+  </section>
+
+  <section aria-labelledby="features">
+    <h2 id="features">امکانات</h2>
+    <dl class="fields">
+      <div><dt>سرویس‌ها</dt><dd>چند کار را با یک لمس انتخاب و با هم ثبت کنید. هزینه، تعمیرگاه، یادداشت و عکس فاکتور را اضافه کنید. اگر کاری در لیست نبود، نوع جدید بسازید.</dd></div>
+      <div><dt>یادآوری سررسید</dt><dd>برای هر کار سررسید کیلومتری یا تاریخی بگذارید و اعلان بگیرید. ساعت یادآوری قابل تنظیم است. با ثبت دوباره‌ی همان کار، یادآوری قبلی خودکار کنار می‌رود.</dd></div>
+      <div><dt>اسناد</dt><dd>بیمه، معاینه فنی و مدارک دیگر را با تاریخ انقضا و فایل ضمیمه (عکس یا PDF) نگه دارید.</dd></div>
+      <div><dt>سوخت</dt><dd>بنزین‌زنی‌ها را ثبت کنید. مصرف به روش «باک پر تا باک پر»، نمودار مصرف و هزینه‌ی ماهانه محاسبه می‌شود.</dd></div>
+      <div><dt>یادداشت‌ها</dt><dd>نکته‌های تعمیرگاه و کارهای عقب‌افتاده را بنویسید یا با تایپ صوتی وارد کنید.</dd></div>
+      <div><dt>خروجی PDF</dt><dd>شناسنامه‌ی ماشین را با سرویس‌ها و خلاصه‌ی هزینه‌ها بسازید و به اشتراک بگذارید.</dd></div>
+      <div><dt>بک‌آپ و بازیابی</dt><dd>از همه‌ی اطلاعات، همراه عکس‌ها و فایل‌ها، نسخه‌ی پشتیبان بگیرید و روی گوشی دیگر برگردانید.</dd></div>
+    </dl>
+    <p style="margin-top:1rem;color:var(--muted)">در این نسخه مدیریت یک ماشین پشتیبانی می‌شود.</p>
+  </section>
+
+  <!--
+  اسکرین‌شات‌ها: بعد از گرفتن عکس‌ها، فایل‌ها را کنار index.html بگذارید و این بخش را فعال کنید.
+  <section aria-labelledby="shots">
+    <h2 id="shots">تصویر برنامه</h2>
+    <img src="shot1.png" alt="داشبورد برنامه با یادآوری سررسیدها" width="270">
+    <img src="shot2.png" alt="ثبت چند سرویس با انتخاب سریع" width="270">
+  </section>
+  -->
+
+  <section aria-labelledby="privacy">
+    <h2 id="privacy">حریم خصوصی</h2>
+    <div class="note">
+      <ul>
+        <li>برنامه مجوز اتصال به اینترنت درخواست نمی‌کند؛ یعنی خودِ برنامه از نظر فنی نمی‌تواند هیچ اطلاعاتی به جایی بفرستد.</li>
+        <li>اطلاعاتی که ثبت می‌کنید (ماشین، سرویس‌ها، اسناد، سوخت، یادداشت‌ها و فایل‌های ضمیمه) در حافظه‌ی همین گوشی ذخیره می‌شود.</li>
+        <li>اطلاعات فقط با کار خودتان از برنامه بیرون می‌رود: با دکمه‌ی بک‌آپ یا خروجی PDF و از طریق برنامه‌ای که خودتان انتخاب می‌کنید.</li>
+        <li>دو مورد کار خودِ اندروید است، نه برنامه: «پشتیبان‌گیری خودکار» اندروید، اگر در تنظیمات گوشی‌تان روشن باشد، و تایپ صوتی که از سرویس گفتار گوشی (معمولاً گوگل) استفاده می‌کند.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="download">
+    <h2 id="download">دریافت برنامه</h2>
+    <p class="status">لینک دانلود از کافه‌بازار و مایکت بعد از انتشار اینجا قرار می‌گیرد.</p>
+    <!--
+    بعد از انتشار، خط بالا را پاک کنید و لینک‌ها را اینجا بگذارید:
+    <p><a href="https://cafebazaar.ir/app/...">دریافت از کافه‌بازار</a></p>
+    <p><a href="https://myket.ir/app/...">دریافت از مایکت</a></p>
+    -->
+  </section>
+
+  <section aria-labelledby="contact">
+    <h2 id="contact">تماس</h2>
+    <p>برای پیشنهاد، گزارش مشکل یا سؤال به این نشانی ایمیل بزنید:</p>
+    <p><a class="email" href="mailto:amin.sunny0@gmail.com">amin.sunny0@gmail.com</a></p>
+  </section>
+
+  <footer>شناسنامه ماشین، نسخه ۶.۲</footer>
+
+</main>
+</body>
+</html>
